@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>North Florida Real Estate | Lake City, FL</title>
+<meta name="description" content="North Florida Real Estate in Lake City, Florida — professional guidance for buying, selling, and property consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14263F; --navy-deep:#0D1C30; --white:#FFFFFF; --beige:#EFE8DA;
+    --beige-light:#F8F5EE; --gray:#F1F2F4; --gold:#BB9760; --gold-soft:#DCC49A; --ink:#20293B; --line:#E1DACB;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(80px + env(safe-area-inset-top,0px));}
+  body{font-family:'Work Sans',sans-serif; color:var(--ink); background:var(--white); padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif; font-weight:600;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 32px;}
+  section{padding:104px 0;}
+  @media(max-width:720px){section{padding:68px 0;} .wrap{padding:0 22px;}}
+
+  header{position:fixed; top:0; left:0; right:0; z-index:100; padding-top:env(safe-area-inset-top,0px);
+    background:transparent; transition:background .35s ease, box-shadow .35s ease;}
+  header.scrolled{background:rgba(255,255,255,.96); box-shadow:0 2px 18px rgba(20,38,63,.1); backdrop-filter:blur(6px);}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:24px 32px; max-width:1160px; margin:0 auto;}
+  .brand{font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--white); letter-spacing:.01em; transition:color .3s;}
+  header.scrolled .brand{color:var(--navy-deep);}
+  .navlinks{display:none; gap:32px; align-items:center;}
+  @media(min-width:920px){.navlinks{display:flex;}}
+  .navlinks a{color:rgba(255,255,255,.88); font-size:14px; font-weight:500; transition:color .2s;}
+  header.scrolled .navlinks a{color:#425068;}
+  .navlinks a:hover{color:var(--gold);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 25px; font-size:13.5px; font-weight:600; letter-spacing:.02em; border-radius:3px; transition:transform .2s ease, background .2s ease, opacity .2s ease; cursor:pointer; border:1px solid transparent;}
+  .btn-gold{background:var(--gold); color:var(--white);}
+  .btn-gold:hover{transform:translateY(-1px); opacity:.92;}
+  .btn-line{border-color:rgba(255,255,255,.55); color:var(--white);}
+  .btn-line:hover{border-color:var(--gold); color:var(--gold);}
+  .btn-linenavy{border-color:var(--navy); color:var(--navy);}
+  .btn-linenavy:hover{border-color:var(--gold); color:var(--gold);}
+  .navcta{display:none;}
+  @media(min-width:920px){.navcta{display:inline-flex;}}
+  .burger{display:flex; flex-direction:column; gap:5px; background:none; border:none; padding:8px; cursor:pointer;}
+  .burger span{width:22px; height:2px; background:var(--white); transition:background .3s;}
+  header.scrolled .burger span{background:var(--navy-deep);}
+  @media(min-width:920px){.burger{display:none;}}
+  .mobilemenu{display:none; flex-direction:column; background:var(--white); padding:8px 32px 24px;}
+  .mobilemenu.open{display:flex;}
+  .mobilemenu a{padding:12px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--navy-deep);}
+
+  .hero{position:relative; min-height:92vh; display:flex; align-items:center; overflow:hidden;
+    background:linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 55%, #1C3355 100%);}
+  .hero-art{position:absolute; inset:0;}
+  .hero-content{position:relative; z-index:2; max-width:1160px; margin:0 auto; padding:0 32px; width:100%;}
+  .eyebrow{color:var(--gold-soft); font-size:13px; letter-spacing:.22em; margin-bottom:20px; font-weight:500;}
+  .hero h1{color:var(--white); font-size:clamp(40px,6.4vw,72px); line-height:1.08; max-width:680px;}
+  .hero p{color:var(--beige); font-size:18px; max-width:480px; margin:24px 0 36px; line-height:1.65; opacity:.92;}
+  .hero-btns{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:46px;}
+  .trustrow{display:flex; align-items:center; gap:12px; color:var(--white); font-size:14px;}
+  .trustrow .stars{color:var(--gold-soft); letter-spacing:2px;}
+
+  .split{display:grid; grid-template-columns:1fr; gap:60px; align-items:center;}
+  @media(min-width:900px){.split{grid-template-columns:.9fr 1.1fr;}}
+  .art{aspect-ratio:5/6; position:relative; overflow:hidden; border-radius:3px;}
+  .kicker{color:var(--gold); font-size:12.5px; letter-spacing:.2em; margin-bottom:16px; font-weight:600;}
+  .about-text h2{font-size:clamp(30px,4vw,44px); margin-bottom:22px; color:var(--navy-deep);}
+  .about-text p{font-size:16.5px; line-height:1.85; color:#4A5771; max-width:480px;}
+
+  .services-head{max-width:560px; margin:0 auto 58px; text-align:center;}
+  .services-head h2{font-size:clamp(30px,4vw,44px); color:var(--navy-deep);}
+  .services-head p{color:#5C6779; margin-top:14px; font-size:16.5px;}
+  .servlist{display:flex; flex-direction:column;}
+  .servrow{display:grid; grid-template-columns:56px 1fr; gap:26px; padding:30px 0; border-top:1px solid var(--line); align-items:flex-start;}
+  .servlist>.servrow:last-child{border-bottom:1px solid var(--line);}
+  .servrow .icon{width:32px; height:32px;}
+  .servrow h3{font-family:'Work Sans',sans-serif; font-weight:600; font-size:17px; color:var(--navy-deep); margin-bottom:6px;}
+  .servrow p{color:#5C6779; font-size:15px; line-height:1.6; max-width:520px;}
+
+  .why{background:var(--navy-deep); color:var(--beige);}
+  .why-head{text-align:center; max-width:600px; margin:0 auto 60px;}
+  .why h2{color:var(--white); font-size:clamp(30px,4vw,44px);}
+  .whygrid{display:grid; grid-template-columns:1fr; gap:1px; background:rgba(255,255,255,.1);}
+  @media(min-width:640px){.whygrid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.whygrid{grid-template-columns:repeat(5,1fr);}}
+  .whycell{background:var(--navy-deep); padding:36px 26px; transition:background .25s;}
+  .whycell:hover{background:#182C4A;}
+  .whycell svg{width:28px; height:28px; margin-bottom:18px;}
+  .whycell h3{font-family:'Work Sans',sans-serif; font-weight:600; font-size:15.5px; color:var(--white); margin-bottom:8px;}
+  .whycell p{font-size:13.5px; color:#AAB4C8; line-height:1.55;}
+
+  .loc-wrap{display:grid; grid-template-columns:1fr; gap:54px;}
+  @media(min-width:900px){.loc-wrap{grid-template-columns:1fr 1fr;}}
+  .loc-text h2{font-size:clamp(30px,4vw,44px); color:var(--navy-deep); margin-bottom:20px;}
+  .loc-text p{color:#4A5771; font-size:16.5px; line-height:1.85; max-width:460px; margin-bottom:26px;}
+  .addr-box{border:1px solid var(--line); background:var(--gray); padding:24px 26px; margin-bottom:26px; max-width:340px; border-radius:3px;}
+  .addr-box p{font-size:15.5px; color:var(--navy-deep); line-height:1.6;}
+  .addr-box .plus{margin-top:10px; font-size:12.5px; color:#7C879C; letter-spacing:.03em;}
+  .map-art{aspect-ratio:4/3; background:
+    radial-gradient(circle at 60% 40%, rgba(187,151,96,.18), transparent 55%), var(--gray);
+    border:1px solid var(--line); position:relative; border-radius:3px; overflow:hidden;}
+  .map-art svg{width:100%; height:100%;}
+
+  .ratingstrip{background:var(--beige-light); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:52px 0;}
+  .ratingstrip .wrap{display:flex; align-items:center; justify-content:center; gap:16px; text-align:center; flex-direction:column;}
+  .ratingstrip .stars{color:var(--gold); font-size:20px; letter-spacing:4px;}
+  .ratingstrip .num{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:42px; color:var(--navy-deep);}
+  .ratingstrip .lbl{color:#5C6779; font-size:12.5px; letter-spacing:.16em;}
+
+  .contact{background:var(--gray);}
+  .contact-grid{display:grid; grid-template-columns:1fr; gap:54px;}
+  @media(min-width:960px){.contact-grid{grid-template-columns:.85fr 1.15fr;}}
+  .contact-left h2{color:var(--navy-deep); font-size:clamp(28px,4vw,40px); margin-bottom:16px;}
+  .contact-left p{color:#4A5771; font-size:16px; line-height:1.7; margin-bottom:32px; max-width:420px;}
+  .contact-info .row{margin-bottom:18px; border-top:1px solid var(--line); padding-top:16px;}
+  .contact-info .k{color:var(--gold); font-size:12px; letter-spacing:.14em; margin-bottom:4px; font-weight:600;}
+  .contact-info .v{color:var(--navy-deep); font-size:16px;}
+  .contact-btns{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+
+  form{background:var(--white); padding:42px; border-radius:3px; border:1px solid var(--line);}
+  .frow{margin-bottom:18px;}
+  .frow label{display:block; font-size:12.5px; color:#5C6779; margin-bottom:7px; letter-spacing:.02em; font-weight:500;}
+  .frow input, .frow select, .frow textarea{width:100%; border:1px solid var(--line); padding:12px 14px; font-family:'Work Sans',sans-serif; font-size:15px; background:var(--gray); color:var(--ink); border-radius:3px;}
+  .frow input:focus, .frow select:focus, .frow textarea:focus{outline:2px solid var(--gold); outline-offset:1px; background:var(--white);}
+  .frow2{display:grid; grid-template-columns:1fr; gap:18px;}
+  @media(min-width:560px){.frow2{grid-template-columns:1fr 1fr;}}
+  .formbtn{width:100%; padding:14px; border:none; cursor:pointer;}
+  .formnote{font-size:13px; color:#5C6779; margin-top:14px; text-align:center;}
+
+  .visitus{background:var(--white);}
+  .visit-map{aspect-ratio:16/7; background:
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0/40px 40px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/40px 40px, var(--beige-light);
+    border:1px solid var(--line); position:relative; border-radius:3px; margin-top:34px;}
+  .pin{position:absolute; top:48%; left:50%; width:16px; height:16px; border-radius:50% 50% 50% 0; background:var(--gold); transform:translate(-50%,-100%) rotate(-45deg);}
+
+  footer{background:var(--navy-deep); color:#AAB4C8; padding:66px 0 28px;}
+  .fgrid{display:grid; grid-template-columns:1fr; gap:42px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);}
+  @media(min-width:760px){.fgrid{grid-template-columns:1.3fr 1fr 1fr;}}
+  .fbrand{font-family:'Cormorant Garamond',serif; color:var(--white); font-size:21px; margin-bottom:14px; font-weight:600;}
+  .fgrid p{font-size:14px; line-height:1.8;}
+  .fgrid h4{color:var(--white); font-size:12.5px; letter-spacing:.14em; margin-bottom:16px; font-weight:600;}
+  .fgrid ul{list-style:none;}
+  .fgrid li{margin-bottom:9px;}
+  .fgrid a{font-size:14px; color:#AAB4C8; transition:color .2s;}
+  .fgrid a:hover{color:var(--gold-soft);}
+  .fbottom{padding-top:24px; font-size:12.5px; color:#7688A0;}
+
+  ::selection{background:var(--gold-soft); color:var(--navy-deep);}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav>
+    <a href="#" class="brand">North Florida Real Estate</a>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-gold navcta">Get in Touch</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Choose Us</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-art">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0D1C30"/>
+          <stop offset="100%" stop-color="#1F3B62"/>
+        </linearGradient>
+      </defs>
+      <rect width="1400" height="900" fill="url(#sky2)"/>
+      <g opacity="0.55" stroke="#BB9760" stroke-width="1.3" fill="none">
+        <path d="M0 500 Q350 430 700 500 T1400 480"/>
+        <path d="M0 560 Q350 610 700 560 T1400 600"/>
+      </g>
+      <g fill="#14263F" stroke="#BB9760" stroke-width="1.1" opacity="0.9">
+        <rect x="150" y="640" width="220" height="140"/>
+        <path d="M130 640 L260 560 L390 640"/>
+        <rect x="200" y="690" width="36" height="90"/>
+        <rect x="290" y="680" width="34" height="40"/>
+      </g>
+      <g fill="#101F35" stroke="#BB9760" stroke-width="1" opacity="0.8">
+        <rect x="960" y="660" width="260" height="120"/>
+        <path d="M940 660 L1090 590 L1240 660"/>
+        <rect x="1010" y="700" width="34" height="80"/>
+      </g>
+      <rect y="780" width="1400" height="120" fill="#0D1C30"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow">NORTH FLORIDA REAL ESTATE</div>
+    <h1>Find Your Place in North Florida</h1>
+    <p>Professional real estate assistance in Lake City, Florida, helping clients navigate their property goals with confidence.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-gold">Get in Touch</a>
+      <a href="https://maps.app.goo.gl/7d3kE4PvzspjPAV4A" target="_blank" rel="noopener" class="btn btn-line">View Location</a>
+    </div>
+    <div class="trustrow"><span class="stars">★★★★★</span> 5.0 Rating</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div class="art" style="background:linear-gradient(160deg,var(--beige-light),var(--beige)); border:1px solid var(--line);">
+      <svg viewBox="0 0 500 600" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="600" fill="#F8F5EE"/>
+        <g fill="none" stroke="#BB9760" stroke-width="1.5">
+          <rect x="90" y="360" width="320" height="180"/>
+          <path d="M70 360 L250 240 L430 360"/>
+          <rect x="230" y="450" width="60" height="90"/>
+          <rect x="130" y="390" width="42" height="42"/>
+          <rect x="330" y="390" width="42" height="42"/>
+        </g>
+        <path d="M40 560 Q250 520 460 560" fill="none" stroke="#BB9760" stroke-width="1.3" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <div class="kicker">ABOUT US</div>
+      <h2>About North Florida Real Estate</h2>
+      <p>North Florida Real Estate is a real estate business based in Lake City, Florida. We work with clients directly to help them navigate the decisions involved in buying, selling, and exploring property in the local area.</p>
+      <br>
+      <p>Our focus is on clear communication and personalized guidance, taking time to understand each client's goals and supporting them through the process with a local, Lake City perspective.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--gray);">
+  <div class="wrap">
+    <div class="services-head">
+      <div class="kicker" style="justify-content:center; display:flex;">SERVICES</div>
+      <h2>Real Estate Services</h2>
+      <p>Professional guidance for your real estate journey.</p>
+    </div>
+    <div class="servlist">
+      <div class="servrow">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#BB9760" stroke-width="1.6"><path d="M6 20 20 8l14 12M10 18v14h20V18"/></svg>
+        <div><h3>Buying a Home</h3><p>Help clients navigate the home-buying process and explore properties that fit their needs.</p></div>
+      </div>
+      <div class="servrow">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#BB9760" stroke-width="1.6"><path d="M8 24l10-14 10 14M12 22h16v10H12z"/><path d="M17 32v-6h6v6"/></svg>
+        <div><h3>Selling a Property</h3><p>Provide guidance throughout the property-selling process.</p></div>
+      </div>
+      <div class="servrow">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#BB9760" stroke-width="1.6"><circle cx="20" cy="20" r="13"/><path d="M20 13v7l5 4"/></svg>
+        <div><h3>Property Consultation</h3><p>Help clients understand their real estate options and make informed decisions.</p></div>
+      </div>
+      <div class="servrow">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#BB9760" stroke-width="1.6"><rect x="8" y="14" width="24" height="20"/><path d="M8 14l12-8 12 8"/><rect x="17" y="22" width="6" height="12"/></svg>
+        <div><h3>Residential Real Estate</h3><p>Provide assistance for residential property needs in North Florida.</p></div>
+      </div>
+      <div class="servrow">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#BB9760" stroke-width="1.6"><path d="M6 30l8-10 6 6 8-12 6 8"/><path d="M6 32h28"/></svg>
+        <div><h3>Local Market Guidance</h3><p>Help clients better understand real estate opportunities in the Lake City area.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-head">
+      <div class="kicker" style="color:var(--gold-soft); justify-content:center; display:flex;">WHY CHOOSE US</div>
+      <h2>Your Real Estate Goals Matter</h2>
+    </div>
+    <div class="whygrid">
+      <div class="whycell"><svg viewBox="0 0 32 32" fill="none" stroke="#DCC49A" stroke-width="1.5"><circle cx="16" cy="11" r="6"/><path d="M5 27c0-6 5-10 11-10s11 4 11 10"/></svg><h3>Personalized Service</h3><p>Guidance shaped around your specific goals.</p></div>
+      <div class="whycell"><svg viewBox="0 0 32 32" fill="none" stroke="#DCC49A" stroke-width="1.5"><path d="M16 4l10 5v7c0 7-4.5 10.5-10 12-5.5-1.5-10-5-10-12V9z"/></svg><h3>Professional Guidance</h3><p>Straightforward support at every stage.</p></div>
+      <div class="whycell"><svg viewBox="0 0 32 32" fill="none" stroke="#DCC49A" stroke-width="1.5"><path d="M16 4C10 4 6 9 6 14c0 8 10 14 10 14s10-6 10-14c0-5-4-10-10-10z"/><circle cx="16" cy="14" r="3.5"/></svg><h3>Local Lake City Presence</h3><p>Based in Lake City, with a local perspective.</p></div>
+      <div class="whycell"><svg viewBox="0 0 32 32" fill="none" stroke="#DCC49A" stroke-width="1.5"><path d="M5 9h22v14H12l-7 5z"/></svg><h3>Clear Communication</h3><p>You'll always know where things stand.</p></div>
+      <div class="whycell"><svg viewBox="0 0 32 32" fill="none" stroke="#DCC49A" stroke-width="1.5"><path d="M16 27s-10-6-10-14a7 7 0 0 1 13-3.5A7 7 0 0 1 26 13c0 8-10 14-10 14z"/></svg><h3>Client-Focused Approach</h3><p>Your objectives guide every conversation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap loc-wrap">
+    <div class="loc-text">
+      <div class="kicker">LOCATION</div>
+      <h2>Serving Lake City and North Florida</h2>
+      <p>Located in Lake City, Florida, North Florida Real Estate provides professional real estate assistance for clients in the local area.</p>
+      <div class="addr-box">
+        <p>306 SW Main Blvd<br>Lake City, FL 32025<br>United States</p>
+        <div class="plus">59P6+F4 Lake City, Florida, USA</div>
+      </div>
+      <a href="https://maps.app.goo.gl/7d3kE4PvzspjPAV4A" target="_blank" rel="noopener" class="btn btn-gold">Get Directions</a>
+    </div>
+    <div class="map-art">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 60 H400 M0 130 H400 M0 200 H400 M70 0 V300 M180 0 V300 M300 0 V300" stroke="#E1DACB" stroke-width="1"/>
+        <circle cx="200" cy="150" r="8" fill="#BB9760"/>
+        <circle cx="200" cy="150" r="16" fill="none" stroke="#BB9760" stroke-width="1.4" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="ratingstrip">
+  <div class="wrap">
+    <div class="stars">★★★★★</div>
+    <div class="num">5.0</div>
+    <div class="lbl">CUSTOMER RATING</div>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-left">
+      <div class="kicker">CONTACT</div>
+      <h2>Let's Talk About Your Real Estate Goals</h2>
+      <p>Whether you're buying, selling, or exploring your real estate options, get in touch with North Florida Real Estate.</p>
+      <div class="contact-info">
+        <div class="row"><div class="k">COMPANY</div><div class="v">North Florida Real Estate</div></div>
+        <div class="row"><div class="k">PHONE</div><div class="v">+1 (386) 623-7876</div></div>
+        <div class="row"><div class="k">ADDRESS</div><div class="v">306 SW Main Blvd, Lake City, FL 32025, United States</div></div>
+      </div>
+      <div class="contact-btns">
+        <a href="tel:+13866237876" class="btn btn-gold">Call Now</a>
+        <a href="https://maps.app.goo.gl/7d3kE4PvzspjPAV4A" target="_blank" rel="noopener" class="btn btn-linenavy">Get Directions</a>
+      </div>
+    </div>
+    <form id="leadForm">
+      <div class="frow2">
+        <div class="frow"><label for="fname">Full Name</label><input id="fname" type="text" required></div>
+        <div class="frow"><label for="fphone">Phone Number</label><input id="fphone" type="tel" required></div>
+      </div>
+      <div class="frow"><label for="femail">Email</label><input id="femail" type="email" required></div>
+      <div class="frow"><label for="finterest">I'm interested in</label>
+        <select id="finterest">
+          <option>Buying a Home</option>
+          <option>Selling a Property</option>
+          <option>Property Consultation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="frow"><label for="fmsg">Message</label><textarea id="fmsg" rows="4"></textarea></div>
+      <button type="submit" class="btn btn-gold formbtn">Send Message</button>
+      <div class="formnote" id="formNote">We'll respond as soon as we can.</div>
+    </form>
+  </div>
+</section>
+
+<section class="visitus">
+  <div class="wrap">
+    <div class="kicker">VISIT US</div>
+    <h2 style="font-size:clamp(28px,4vw,38px); color:var(--navy-deep);">306 SW Main Blvd, Lake City, FL 32025, United States</h2>
+    <div class="visit-map"><div class="pin"></div></div>
+    <div style="margin-top:24px;"><a href="https://maps.app.goo.gl/7d3kE4PvzspjPAV4A" target="_blank" rel="noopener" class="btn btn-linenavy">View on Google Maps</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">North Florida Real Estate</div>
+        <p>306 SW Main Blvd,<br>Lake City, FL 32025,<br>United States</p>
+        <p style="margin-top:10px;">+1 (386) 623-7876</p>
+      </div>
+      <div>
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>GET IN TOUCH</h4>
+        <ul>
+          <li><a href="tel:+13866237876">Call Now</a></li>
+          <li><a href="https://maps.app.goo.gl/7d3kE4PvzspjPAV4A" target="_blank" rel="noopener">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">© 2026 North Florida Real Estate. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  const form = document.getElementById('leadForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    note.textContent = "Thanks — your message has been noted. We'll be in touch soon.";
+    note.style.color = '#8A6D3B';
+    form.reset();
+  });
+</script>
+</body>
+</html>
